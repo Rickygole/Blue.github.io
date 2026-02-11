@@ -1,179 +1,68 @@
-/* --- GLOBAL THEME & FONTS --- */
-:root {
-  --ghibli-green: #2d5a27;
-  --ghibli-cream: rgba(255, 255, 255, 0.82); /* Slightly more solid for readability */
-  --ghibli-yellow: #ffeb3b;
-  --soft-shadow: 0 8px 32px rgba(0, 0, 0, 0.2);
-}
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>Our Story — Valentine</title>
+  <link href="https://fonts.googleapis.com/css2?family=Lora:ital,wght@0,400;0,700;1,400&family=Playfair+Display:wght@700&family=Pacifico&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body class="page ghibli-theme">
+  <div id="gif-bg" aria-hidden="true"></div>
+  <header class="nav">
+    <div class="container nav-inner">
+      <a class="brand" href="index.html" style="font-family: 'Pacifico', cursive;">Blue</a>
+      <nav>
+        <a href="index.html">Home</a>
+        <a href="story.html">Story</a>
+        <a href="gallery.html">Gallery</a>
+        <a href="valentine.html">Valentine</a>
+      </nav>
+    </div>
+  </header>
 
-* { box-sizing: border-box; }
+  <main class="container">
+    <section class="timeline">
+      <h2 class="page-title reveal ghibli-title visible" style="text-align:center;">Our Journey</h2>
+      
+      <div class="cards">
+        <article class="card reveal story-card visible">
+          <div class="card-leaf">🌿</div>
+          <h3 class="story-heading">How we met</h3>
+          <p class="card-text">Our story began with a beautiful mistake—a single tap that bridged the miles before we even knew how much we’d need each other.</p>
+        </article>
 
-html, body { 
-  height: 100%; 
-  margin: 0; 
-  padding: 0; 
-}
+        <article class="card reveal story-card visible">
+          <div class="card-leaf">✨</div>
+          <h3 class="story-heading">The Turning Point</h3>
+          <p class="card-text">Somewhere between the late-night talks and the hours on the phone, the distance started to disappear. You weren't just a person on my screen anymore; you became my home.</p>
+        </article>
 
-body {
-  font-family: 'Lora', 'Inter', serif;
-  background: transparent;
-  color: #1a3c15;
-  line-height: 1.5;
-}
+        <article class="card reveal story-card visible">
+          <div class="card-leaf">☁️</div>
+          <h3 class="story-heading">The Connection</h3>
+          <p class="card-text">We built our own world in the silence, laughing at things only we understood, making the thousands of miles between us feel like nothing at all.</p>
+        </article>
 
-/* Dedicated Totoro Background */
-#gif-bg {
-  position: fixed;
-  inset: 0;
-  pointer-events: none;
-  background-image: url('https://media1.giphy.com/media/v1.Y2lkPTc5MGI3NjExOW5lbzQ3MWhjZTYxbTk0ZHE2NTJlbmwwdjNhNWNuMTFvOWd0NW41ZCZlcD12MV9pbnRlcm5hbF9naWZfYnlfaWQmY3Q9Zw/x5HlLDaLMZNVS/giphy.gif');
-  background-size: cover;
-  background-position: center;
-  z-index: -1000;
-  opacity: 1 !important;
-}
+        <article class="card reveal story-card visible">
+          <div class="card-leaf">🌙</div>
+          <h3 class="story-heading">The Realization</h3>
+          <p class="card-text">I learned that you are as soft as a dream yet as fierce as the ocean. I realized then that loving you—and staying for you—is the easiest thing I’ve ever done.</p>
+        </article>
+      </div>
+    </section>
 
-/* --- REVEAL UTILITY (The fix for invisible items) --- */
-.reveal {
-  opacity: 1 !important; /* Force visibility because script triggers might be late */
-  transform: none !important;
-  visibility: visible !important;
-}
+    <div class="poetic-promise reveal visible" style="margin-top: 60px;">
+      <p class="promise-main">Distance is just a test to see how far love can travel.</p>
+      <p class="promise-sub">I love you more than words can carry across these miles.</p>
+      <h2 class="final-vow">I will fight for the world for you.</h2>
+    </div>
 
-/* --- NAVIGATION --- */
-.nav {
-  backdrop-filter: blur(10px);
-  position: sticky;
-  top: 0;
-  z-index: 100;
-  padding: 15px 0;
-  background: rgba(255, 255, 255, 0.1);
-}
-.nav-inner {
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-  max-width: 1000px;
-  margin: 0 auto;
-  padding: 0 20px;
-}
-.brand { font-family: 'Pacifico', cursive; font-size: 1.8rem; color: #fff; text-decoration: none; text-shadow: 0 2px 4px rgba(0,0,0,0.3); }
-.nav a { color: #fff; text-decoration: none; margin-left: 20px; font-weight: bold; background: rgba(0,0,0,0.2); padding: 5px 12px; border-radius: 8px; }
+    <div style="text-align:center; margin-top: 40px;">
+        <a class="btn ghibli-btn" href="gallery.html">See Our Memories →</a>
+    </div>
+  </main>
 
-/* --- STORY PAGE --- */
-.story-card {
-  background: var(--ghibli-cream) !important;
-  backdrop-filter: blur(12px) !important;
-  border-radius: 25px !important;
-  padding: 30px !important;
-  margin: 20px auto !important;
-  border: 1px solid rgba(255, 255, 255, 0.4) !important;
-  box-shadow: var(--soft-shadow) !important;
-  max-width: 650px;
-  display: block !important;
-}
-.story-heading { font-family: 'Playfair Display', serif; color: var(--ghibli-green); margin-bottom: 10px; font-weight: 700; }
-.card-text { font-size: 1.2rem; line-height: 1.7; font-weight: 500; }
-.poetic-promise { text-align: center; color: white; margin-top: 50px; text-shadow: 0 2px 10px rgba(0,0,0,0.7); }
-.final-vow { font-family: 'Pacifico', cursive; font-size: 2.5rem; color: var(--ghibli-yellow); }
-
-/* --- GALLERY PAGE --- */
-.filmstrip {
-  display: flex;
-  flex-wrap: wrap;
-  gap: 30px;
-  justify-content: center;
-  padding: 40px 20px;
-  min-height: 600px;
-}
-.photo-card.polaroid {
-  opacity: 1 !important;
-  visibility: visible !important;
-  background: #fff !important;
-  padding: 12px 12px 45px 12px !important;
-  border-radius: 2px !important;
-  box-shadow: 0 10px 30px rgba(0,0,0,0.4) !important;
-  cursor: pointer;
-  width: 250px;
-}
-.photo-card.polaroid img {
-  width: 100% !important;
-  height: 240px !important;
-  object-fit: cover !important;
-  display: block !important;
-}
-.polaroid-caption {
-  font-family: 'Pacifico', cursive;
-  text-align: center;
-  margin-top: 15px;
-  color: var(--ghibli-green);
-  font-size: 0.9rem;
-}
-
-/* --- VALENTINE PAGE (The Visibility Fix) --- */
-.valentine {
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  padding-top: 50px;
-}
-
-.final-ask h1 {
-  background: var(--ghibli-cream);
-  padding: 20px 30px;
-  border-radius: 20px;
-  box-shadow: var(--soft-shadow);
-  margin-bottom: 30px;
-}
-
-/* Force buttons to be visible and styled */
-.choices {
-  display: flex !important;
-  gap: 20px !important;
-  justify-content: center !important;
-  opacity: 1 !important;
-  visibility: visible !important;
-}
-
-.btn-yes, .btn.primary {
-  opacity: 1 !important;
-  visibility: visible !important;
-  display: inline-block !important;
-  padding: 15px 40px !important;
-  border-radius: 50px !important;
-  font-size: 1.3rem !important;
-  cursor: pointer !important;
-  transition: transform 0.2s !important;
-}
-
-.btn-yes {
-  display: inline-block !important;
-  visibility: visible !important;
-  opacity: 1 !important;
-  background: #ffb6c1 !important; /* Soft Pink */
-  color: #c2185b !important; /* Deep Rose text */
-  font-weight: 800 !important;
-  padding: 12px 25px !important;
-  border-radius: 50px !important;
-  border: 2px solid #ff85a2 !important;
-  box-shadow: 0 4px 15px rgba(255, 182, 193, 0.6) !important;
-  cursor: pointer !important;
-  z-index: 100;
-}
-}
-
-.btn.primary {
-  background: var(--ghibli-green) !important;
-  color: white !important;
-  border: none !important;
-}
-
-.btn:hover { transform: scale(1.1); }
-
-/* Confetti Canvas */
-#confettiCanvas {
-  position: fixed;
-  inset: 0;
-  pointer-events: none;
-  z-index: 999;
-}
+  <script src="script.js" defer></script>
+</body>
+</html>
