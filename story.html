@@ -1,58 +1,50 @@
-<!doctype html>
-<html lang="en">
-<head>
-  <meta charset="utf-8" />
-  <meta name="viewport" content="width=device-width,initial-scale=1" />
-  <title>Story — Valentine</title>
-  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;700&family=Lora:wght@400;700&family=Playfair+Display:wght@400;700&family=Pacifico&display=swap" rel="stylesheet">
-  <link rel="stylesheet" href="style.css">
-</head>
-<body class="page">
-  <div id="gif-bg" aria-hidden="true"></div>
-  <header class="nav">
-      <div class="container nav-inner">
-      <a class="brand" href="index.html">Blue</a>
-      <nav>
-        <a href="index.html" data-link>Home</a>
-        <a href="story.html" data-link>Story</a>
-        <a href="gallery.html" data-link>Gallery</a>
-        <a href="valentine.html" data-link>Valentine</a>
-      </nav>
-    </div>
-  </header>
+/* 1. Ghibli Theme Background */
+.ghibli-theme {
+  background: url('https://media1.giphy.com/media/v1.Y2lkPTc5MGI3NjExOW5lbzQ3MWhjZTYxbTk0ZHE2NTJlbmwwdjNhNWNuMTFvOWd0NW41ZCZlcD12MV9pbnRlcm5hbF9naWZfYnlfaWQmY3Q9Zw/x5HlLDaLMZNVS/giphy.gif') no-repeat center center fixed !important;
+  background-size: cover !important;
+}
 
-  <main class="container">
-    <section class="timeline">
-      <div class="timeline-progress" aria-hidden="true"><div class="fill"></div></div>
-      <h2 class="page-title reveal" style="font-family:'Playfair Display', Lora, serif;">The Poetic Storyline</h2>
-      <div class="cards">
-        <article class="card reveal story-card" tabindex="0">
-          <h3 class="story-heading">How we met</h3>
-          <p class="card-text">Our story began with a beautiful accident—a single tap that bridged the miles before we even knew how much we’d need each other.</p>
-        </article>
-        <article class="card reveal story-card" tabindex="0">
-          <h3 class="story-heading">The Turning Point</h3>
-          <p class="card-text">Somewhere between the late-night snaps and the hours on the phone, the distance started to disappear. You weren't just a person on my screen anymore; you became my home.</p>
-        </article>
-        <article class="card reveal story-card" tabindex="0">
-          <h3 class="story-heading">The Connection</h3>
-          <p class="card-text">We built our own world in the silence, laughing at things only we understood, making the thousands of miles between us feel like nothing at all.</p>
-        </article>
-        <article class="card reveal story-card" tabindex="0">
-          <h3 class="story-heading">The Realization</h3>
-          <p class="card-text">I learned that you are as soft as a dream yet as fierce as the ocean. I realized then that loving you—and staying for you—is the easiest thing I’ve ever done.</p>
-        </article>
-        <article class="card reveal story-card" tabindex="0">
-          <h3 class="story-heading">The Final Promise</h3>
-          <p class="card-text">Distance is just a test to see how far love can travel. I love you more than words can carry across these miles. I will fight for the world for you.</p>
-        </article>
-      </div>
-    </section>
-    <div class="love-note">
-      <span>I will fight for the world for you.</span>
-    </div>
-  </main>
+/* 2. Glassmorphism Story Cards */
+.story-card {
+  background: rgba(255, 255, 255, 0.7) !important; /* Soft cream/white */
+  backdrop-filter: blur(12px) !important; /* Dreamy blur effect */
+  border-radius: 30px !important;
+  padding: 30px !important;
+  margin-bottom: 30px !important;
+  border: 1px solid rgba(255, 255, 255, 0.4) !important;
+  box-shadow: 0 8px 32px rgba(0, 0, 0, 0.1) !important;
+  position: relative;
+  max-width: 600px;
+  margin-left: auto;
+  margin-right: auto;
+  color: #2d5a27 !important; /* Forest Green text */
+}
 
-  <script src="script.js" defer></script>
-</body>
-</html>
+/* 3. Poetic Promise Styling */
+.poetic-promise {
+  text-align: center;
+  margin-top: 60px;
+  padding: 40px;
+  color: white;
+  text-shadow: 0 2px 10px rgba(0,0,0,0.5);
+}
+
+.final-vow {
+  font-family: 'Pacifico', cursive;
+  font-size: 2.5rem;
+  color: #ffeb3b !important; /* Soft glow yellow */
+  text-shadow: 0 0 15px rgba(255, 235, 59, 0.6);
+  margin-top: 20px;
+}
+
+/* 4. Ghibli Button */
+.ghibli-btn {
+  background: #2d5a27 !important;
+  color: white !important;
+  padding: 15px 30px;
+  border-radius: 50px;
+  font-family: 'Lora', serif;
+  display: inline-block;
+  text-decoration: none;
+  box-shadow: 0 4px 15px rgba(0,0,0,0.2);
+}
