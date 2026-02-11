@@ -147,18 +147,6 @@
       }
 
       function handleChoice(){
-        // Play the user-provided song on user click (no autoplay)
-        const song = document.getElementById('song');
-        if(song){
-          song.volume = 0.9;
-          const p = song.play();
-          if(p && p.catch){
-            p.catch(()=>{
-              // ignore playback exceptions (file missing or browser blocked)
-            });
-          }
-        }
-
         runConfetti();
         if(yes) yes.disabled = true; if(obvious) obvious.disabled = true;
         if(result) result.textContent = "Okay. It’s you. 💙";
