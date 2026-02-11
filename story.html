@@ -3,61 +3,41 @@
 <head>
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width,initial-scale=1" />
-  <title>Story — Valentine</title>
-  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;700&display=swap" rel="stylesheet">
+  <title>Our Story — Valentine</title>
+  <link href="https://fonts.googleapis.com/css2?family=Lora:ital,wght@0,400;0,700;1,400&family=Playfair+Display:wght@700&family=Pacifico&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="style.css">
 </head>
-<body class="page">
+<body class="page ghibli-theme">
   <div id="gif-bg" aria-hidden="true"></div>
   <header class="nav">
-      <div class="container nav-inner">
-      <a class="brand" href="index.html">Blue</a>
+    <div class="container nav-inner">
+      <a class="brand" href="index.html" style="font-family: 'Pacifico', cursive;">Blue</a>
       <nav>
-        <a href="index.html" data-link>Home</a>
-        <a href="story.html" data-link>Story</a>
-        <a href="gallery.html" data-link>Gallery</a>
-        <a href="valentine.html" data-link>Valentine</a>
+        <a href="index.html">Home</a>
+        <a href="story.html">Story</a>
+        <a href="gallery.html">Gallery</a>
+        <a href="valentine.html">Valentine</a>
       </nav>
     </div>
   </header>
 
   <main class="container">
     <section class="timeline">
-      <div class="timeline-progress" aria-hidden="true"><div class="fill"></div></div>
-      <h2 class="page-title reveal">How we met</h2>
-
+      <h2 class="page-title reveal ghibli-title">Our Journey</h2>
       <div class="cards">
-        <article class="card reveal" tabindex="0">
-          <p class="card-text">You added me by accident, and somehow that accident kept showing up every day.</p>
-          <button class="toggle" aria-expanded="false">More</button>
-          <div class="extra">(add your short detail here)</div>
+        <article class="card reveal story-card">
+          <div class="card-leaf">🌿</div>
+          <h3 class="story-heading">How we met</h3>
+          <p class="card-text">Our story began with a beautiful mistake—a single tap that bridged the miles before we even knew how much we’d need each other.</p>
         </article>
-
-        <article class="card reveal" tabindex="0">
-          <p class="card-text">One day I opened all your snaps, and after that nothing felt casual anymore.</p>
-          <button class="toggle" aria-expanded="false">More</button>
-          <div class="extra">(add your short detail here)</div>
-        </article>
-
-        <article class="card reveal" tabindex="0">
-          <p class="card-text">We laughed at something stupid that only made sense to us, and somehow that was enough.</p>
-          <button class="toggle" aria-expanded="false">More</button>
-          <div class="extra">(add your short detail here)</div>
-        </article>
-
-        <article class="card reveal" tabindex="0">
-          <p class="card-text">This was when I learned you could be soft and still dangerous, and I could care enough to stay.</p>
-          <button class="toggle" aria-expanded="false">More</button>
-          <div class="extra">(add your short detail here)</div>
-        </article>
-
-        <article class="card reveal" tabindex="0">
-          <p class="card-text">Somewhere between normal days and random conversations, I realized I cared whether you were okay.</p>
-          <button class="toggle" aria-expanded="false">More</button>
-          <div class="extra">(add your short detail here)</div>
-        </article>
-      </div>
+        </div>
     </section>
+
+    <div class="poetic-promise reveal">
+      <p class="promise-main">Distance is just a test to see how far love can travel.</p>
+      <p class="promise-sub">I love you more than words can carry across these miles.</p>
+      <h2 class="final-vow">I will fight for the world for you.</h2>
+    </div>
   </main>
 
   <script src="script.js" defer></script>

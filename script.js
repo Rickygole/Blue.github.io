@@ -60,12 +60,12 @@
 
     // Photo list (populated from assets/photos folder)
     const PHOTOS = [
-      'assets/photos/IMG_7560.JPG','assets/photos/IMG_7561.JPG','assets/photos/IMG_7562.JPG','assets/photos/IMG_7563.JPG',
-      'assets/photos/IMG_7739.jpeg','assets/photos/IMG_7740.jpeg','assets/photos/IMG_7741.jpeg','assets/photos/IMG_7742.jpeg',
-      'assets/photos/IMG_7743.jpeg','assets/photos/IMG_7744.jpeg','assets/photos/IMG_7745.jpeg','assets/photos/IMG_7746.jpeg',
-      'assets/photos/IMG_7765.jpeg','assets/photos/IMG_7766.jpeg','assets/photos/IMG_7767.jpeg','assets/photos/IMG_7768.JPG',
-      'assets/photos/IMG_8353.jpeg','assets/photos/IMG_8355.jpeg','assets/photos/IMG_8360.jpeg','assets/photos/IMG_8361.jpeg',
-      'assets/photos/IMG_8362.jpeg','assets/photos/IMG_8363.jpeg'
+      './assets/photos/IMG_7560.JPG','./assets/photos/IMG_7561.JPG','./assets/photos/IMG_7562.JPG','./assets/photos/IMG_7563.JPG',
+      './assets/photos/IMG_7739.jpeg','./assets/photos/IMG_7740.jpeg','./assets/photos/IMG_7741.jpeg','./assets/photos/IMG_7742.jpeg',
+      './assets/photos/IMG_7743.jpeg','./assets/photos/IMG_7744.jpeg','./assets/photos/IMG_7745.jpeg','./assets/photos/IMG_7746.jpeg',
+      './assets/photos/IMG_7765.jpeg','./assets/photos/IMG_7766.jpeg','./assets/photos/IMG_7767.jpeg','./assets/photos/IMG_7768.JPG',
+      './assets/photos/IMG_8353.jpeg','./assets/photos/IMG_8355.jpeg','./assets/photos/IMG_8360.jpeg','./assets/photos/IMG_8361.jpeg',
+      './assets/photos/IMG_8362.jpeg','./assets/photos/IMG_8363.jpeg'
     ];
 
     const CAPTIONS = {
