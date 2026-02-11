@@ -100,6 +100,21 @@ body.page.visible{opacity:1;transition:opacity 420ms ease}
 /* subtle film effect for background */
 body::after{content:"";position:fixed;inset:0;pointer-events:none;background:radial-gradient(800px 300px at 10% 12%, rgba(91,159,255,0.03), transparent), radial-gradient(600px 200px at 85% 78%, rgba(30,58,138,0.02), transparent);mix-blend-mode:overlay;z-index:-1}
 
+/* Subtle animated GIF background (low opacity) */
+body::before{
+  content:"";
+  position:fixed;
+  inset:0;
+  pointer-events:none;
+  background-image: url('https://media1.giphy.com/media/v1.Y2lkPTc5MGI3NjExOW5lbzQ3MWhjZTYxbTk0ZHE2NTJlbmwwdjNhNWNuMTFvOWd0NW41ZCZlcD12MV9pbnRlcm5hbF9naWZfYnlfaWQmY3Q9Zw/x5HlLDaLMZNVS/giphy.gif');
+  background-size:cover;
+  background-position:center;
+  opacity:0.06;
+  filter:blur(2px) saturate(80%);
+  mix-blend-mode:overlay;
+  z-index:-2;
+}
+
 /* Accessibility focus */
 a:focus,button:focus{outline:3px solid rgba(91,159,255,0.18);outline-offset:4px}
 
