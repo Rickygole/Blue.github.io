@@ -4,21 +4,42 @@
   min-height: 300px !important;
   z-index: 1000 !important;
   opacity: 1 !important;
+  justify-content: center;
+  align-items: center;
+  flex-wrap: wrap;
+  gap: 18px;
 }
 .photo-card, .photo-card.polaroid {
   background: #ffe4e1 !important;
   border: 2px solid #c2185b !important;
   opacity: 1 !important;
   z-index: 1001 !important;
+  width: 180px !important;
+  height: 140px !important;
+  display: flex !important;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
 }
 .photo-card img, .photo-card.polaroid img {
   display: block !important;
   opacity: 1 !important;
-  width: 100% !important;
-  max-width: 236px !important;
-  max-height: 160px !important;
+  width: 160px !important;
+  height: 120px !important;
+  object-fit: cover !important;
   background: #fff !important;
   border: 2px solid #1e3a8a !important;
+  border-radius: 8px !important;
+}
+/* Modal image sizing */
+.modal-img {
+  max-width: 90vw !important;
+  max-height: 80vh !important;
+  width: auto !important;
+  height: auto !important;
+  object-fit: contain !important;
+  display: block;
+  margin: 0 auto;
 }
 /* Ghibli-Specific Global Styles */
 .ghibli-theme {
