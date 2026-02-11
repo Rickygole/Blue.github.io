@@ -1,32 +1,9 @@
-// Global script: page transitions, reveals, timeline toggles, modal, gallery, confetti
 (function(){
   document.addEventListener('DOMContentLoaded', ()=>{
+    // Page Reveal Transition
     requestAnimationFrame(()=>document.body.classList.add('visible'));
 
-    document.querySelectorAll('a[data-link]').forEach(a=>{
-      a.addEventListener('click', (e)=>{
-        const href = a.getAttribute('href');
-        if(!href || href.startsWith('#')) return;
-        e.preventDefault();
-        document.body.classList.add('fade-out');
-        setTimeout(()=>{ window.location = href; }, 280);
-      });
-    });
-
-    const io = new IntersectionObserver((entries)=>{
-      entries.forEach(entry=>{
-        if(entry.isIntersecting) entry.target.classList.add('visible');
-      });
-    }, {threshold:0.12});
-    document.querySelectorAll('.reveal').forEach(el=>io.observe(el));
-
-    // Gallery modal setup
-    const modal = document.querySelector('.modal');
-    const modalImg = modal && modal.querySelector('.modal-img');
-    const modalCaption = modal && modal.querySelector('.modal-caption');
-    const modalClose = modal && modal.querySelector('.modal-close');
-
-    // Updated Photo List & Captions for ALL pictures
+    // Updated Photo List & Captions
     const PHOTOS = [
       'assets/photos/IMG_7560.JPG','assets/photos/IMG_7561.JPG','assets/photos/IMG_7562.JPG','assets/photos/IMG_7563.JPG',
       'assets/photos/IMG_7739.jpeg','assets/photos/IMG_7740.jpeg','assets/photos/IMG_7741.jpeg','assets/photos/IMG_7742.jpeg',
@@ -61,63 +38,55 @@
       'IMG_8363.jpeg':'You, me, and a thousand miles made small.'
     };
 
-    const film = document.getElementById('filmstrip');
-    if(film){
-      PHOTOS.forEach(src=>{
+    // --- SLIDESHOW LOGIC ---
+    let currentIndex = 0;
+    const imgEl = document.getElementById('gallery-img');
+    const captionEl = document.getElementById('gallery-caption');
+    const prevBtn = document.getElementById('prevBtn');
+    const nextBtn = document.getElementById('nextBtn');
+    const slideCard = document.getElementById('current-slide');
+
+    function updateGallery(index) {
+      if(!imgEl || !captionEl) return;
+      
+      // Add a quick fade-out effect
+      slideCard.style.opacity = '0';
+      
+      setTimeout(() => {
+        const src = PHOTOS[index];
         const name = src.split('/').pop();
-        const caption = CAPTIONS[name] || 'A beautiful memory.';
-        const btn = document.createElement('button');
-        btn.className = 'photo-card reveal polaroid';
-        btn.setAttribute('data-src', src);
-        btn.setAttribute('data-caption', caption);
+        imgEl.src = src;
+        captionEl.textContent = CAPTIONS[name] || 'A beautiful memory.';
+        
+        // Add random rotation for the Polaroid look
+        const rot = (Math.random() - 0.5) * 5;
+        slideCard.style.transform = `rotate(${rot}deg)`;
+        slideCard.style.opacity = '1';
+      }, 200);
+    }
 
-        const rot = (Math.random()-0.5) * 6;
-        btn.style.transform = `rotate(${rot}deg)`;
+    if (nextBtn && prevBtn) {
+      nextBtn.addEventListener('click', () => {
+        currentIndex = (currentIndex + 1) % PHOTOS.length;
+        updateGallery(currentIndex);
+      });
 
-        const img = document.createElement('img'); img.src = src; img.alt = caption;
-        btn.appendChild(img);
-
-        const cap = document.createElement('div'); cap.className = 'polaroid-caption'; cap.textContent = caption;
-        btn.appendChild(cap);
-
-        film.appendChild(btn);
+      prevBtn.addEventListener('click', () => {
+        currentIndex = (currentIndex - 1 + PHOTOS.length) % PHOTOS.length;
+        updateGallery(currentIndex);
       });
     }
 
-    // Modal behavior
-    document.querySelectorAll('.photo-card').forEach(btn=>{
-      btn.addEventListener('click', ()=>{
-        const src = btn.dataset.src;
-        const caption = btn.dataset.caption || '';
-        if(modal && modalImg){
-          modalImg.src = src; modalImg.alt = caption; modalCaption.textContent = caption;
-          modal.setAttribute('aria-hidden','false');
-          document.body.style.overflow = 'hidden';
-        }
-      });
-    });
-
-    function closeModal(){
-      if(!modal) return;
-      modal.setAttribute('aria-hidden','true');
-      document.body.style.overflow = '';
-      modalImg && (modalImg.src='');
-    }
-    if(modalClose) modalClose.addEventListener('click', closeModal);
-    if(modal){
-      modal.addEventListener('click', (e)=>{ if(e.target===modal) closeModal(); });
-      document.addEventListener('keydown', (e)=>{ if(e.key==='Escape') closeModal(); });
-    }
-
-    // Valentine Logic
+    // --- VALENTINE LOGIC (CONFETTI) ---
     const yes = document.getElementById('yesBtn');
     const obvious = document.getElementById('obviousBtn');
     const result = document.getElementById('result');
     const canvas = document.getElementById('confettiCanvas');
+
     if((yes || obvious) && canvas){
       const ctx = canvas.getContext('2d');
       let running = false;
-      function resize(){ canvas.width = innerWidth; canvas.height = innerHeight; }
+      function resize(){ canvas.width = window.innerWidth; canvas.height = window.innerHeight; }
       resize(); window.addEventListener('resize', resize);
 
       function runConfetti(){
@@ -125,7 +94,16 @@
         const pieces = [];
         const colors = ['#f8ad9d', '#fbc4ab', '#ffdab9', '#ff9a8b'];
         for(let i=0;i<120;i++){
-          pieces.push({x:Math.random()*canvas.width,y:Math.random()*-canvas.height,dx:(Math.random()-0.5)*2,dy:Math.random()*3+2,size:6+Math.random()*8,color:colors[Math.floor(Math.random()*colors.length)],rot:Math.random()*360,dr:Math.random()*6-3});
+          pieces.push({
+            x: Math.random() * canvas.width,
+            y: Math.random() * -canvas.height,
+            dx: (Math.random() - 0.5) * 2,
+            dy: Math.random() * 3 + 2,
+            size: 6 + Math.random() * 8,
+            color: colors[Math.floor(Math.random() * colors.length)],
+            rot: Math.random() * 360,
+            dr: Math.random() * 6 - 3
+          });
         }
         let t=0;
         function frame(){
@@ -136,7 +114,8 @@
             ctx.fillStyle = p.color; ctx.fillRect(-p.size/2,-p.size/2,p.size,p.size);
             ctx.restore();
           });
-          if(t<220) requestAnimationFrame(frame); else { ctx.clearRect(0,0,canvas.width,canvas.height); running=false; }
+          if(t < 250) requestAnimationFrame(frame); 
+          else { ctx.clearRect(0,0,canvas.width,canvas.height); running = false; }
         }
         frame();
       }
@@ -146,10 +125,7 @@
         if(yes) yes.style.display = "none"; 
         if(obvious) obvious.style.display = "none";
         if(result) {
-            result.textContent = "Okay. It’s you. 💙";
-            result.style.fontFamily = "'Pacifico', cursive";
-            result.style.fontSize = "2rem";
-            result.style.color = "#c2185b";
+          result.innerHTML = "<h2 style='font-family:\"Pacifico\", cursive; color:#ffffff; font-size:2.5rem; text-shadow: 2px 2px 10px rgba(0,0,0,0.5);'>Okay. It’s you. 💙</h2>";
         }
       }
       yes && yes.addEventListener('click', handleChoice);
