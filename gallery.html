@@ -4,66 +4,42 @@
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width,initial-scale=1" />
   <title>Gallery — Valentine</title>
-  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;700&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600&family=Pacifico&family=Lora&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="style.css">
 </head>
-<body class="page">
+<body class="page ghibli-theme">
   <div id="gif-bg" aria-hidden="true"></div>
   <header class="nav">
       <div class="container nav-inner">
       <a class="brand" href="index.html">Blue</a>
       <nav>
-        <a href="index.html" data-link>Home</a>
-        <a href="story.html" data-link>Story</a>
-        <a href="gallery.html" data-link>Gallery</a>
-        <a href="valentine.html" data-link>Valentine</a>
+        <a href="index.html">Home</a>
+        <a href="story.html">Story</a>
+        <a href="gallery.html">Gallery</a>
+        <a href="valentine.html">Valentine</a>
       </nav>
     </div>
   </header>
 
   <main class="container">
-    <h2 class="page-title reveal" style="text-align:center;">Gallery</h2>
-    <div style="display:flex;justify-content:center;align-items:center;margin-bottom:18px;gap:18px;">
-      <button id="prevBtn" class="btn ghibli-btn">Previous</button>
-      <div class="filmstrip" id="filmstrip" aria-live="polite" style="flex:1;justify-content:center;"></div>
-      <button id="nextBtn" class="btn ghibli-btn">Next</button>
-    </div>
-    <div class="gallery-actions" style="text-align:center;">
-      <a class="btn" href="valentine.html" data-link>Next</a>
-    </div>
-    <p style="margin-top:2em;color:#c2185b;font-weight:600;">If you do not see the 'last page' image, please rename <b>last page.png</b> to <b>last-page.png</b> and move it to <b>assets/photos/</b> for it to display correctly.</p>
+    <h2 class="page-title ghibli-title" style="text-align:center;">Our Memories</h2>
+    
+    <div class="filmstrip" id="filmstrip" aria-live="polite">
+        </div>
 
-    <!-- Modal -->
+    <div class="gallery-actions" style="text-align:center; margin-top: 40px;">
+      <a class="btn ghibli-btn" href="valentine.html" style="padding: 15px 40px; text-decoration: none;">Next Chapter →</a>
+    </div>
+
     <div class="modal" aria-hidden="true">
       <div class="modal-inner" role="dialog" aria-modal="true">
         <button class="modal-close" aria-label="Close">✕</button>
         <img class="modal-img" src="" alt="">
-        <p class="modal-caption"></p>
+        <p class="modal-caption" style="font-family: 'Pacifico', cursive; font-size: 1.5rem; color: #2d5a27;"></p>
       </div>
     </div>
   </main>
 
   <script src="script.js" defer></script>
-  <script>
-    // Gallery navigation logic
-    document.addEventListener('DOMContentLoaded', function() {
-      const film = document.getElementById('filmstrip');
-      const cards = Array.from(film.querySelectorAll('.photo-card'));
-      let start = 0;
-      const visibleCount = 4;
-      function showCards() {
-        cards.forEach((c,i)=>c.style.display = (i>=start && i<start+visibleCount)?'flex':'none');
-      }
-      showCards();
-      document.getElementById('prevBtn').onclick = function() {
-        start = Math.max(0, start-visibleCount);
-        showCards();
-      };
-      document.getElementById('nextBtn').onclick = function() {
-        start = Math.min(cards.length-visibleCount, start+visibleCount);
-        showCards();
-      };
-    });
-  </script>
 </body>
 </html>

@@ -9,37 +9,40 @@
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width,initial-scale=1" />
     <title>Home — Valentine</title>
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;700&family=Lora:wght@400;700&family=Playfair+Display:wght@400;700&family=Pacifico&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;700&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="style.css">
   </head>
   <body class="page">
     <div id="gif-bg" aria-hidden="true"></div>
     <header class="nav">
       <div class="container nav-inner">
-        <a class="brand" href="index.html">Blue</a>
-        <nav>
-          <a href="index.html" data-link>Home</a>
-          <a href="story.html" data-link>Story</a>
-          <a href="gallery.html" data-link>Gallery</a>
-          <a href="valentine.html" data-link>Valentine</a>
-        </nav>
-      </div>
+      <a class="brand" href="index.html">Blue</a>
+      <nav>
+        <a href="index.html" data-link>Home</a>
+        <a href="story.html" data-link>Story</a>
+        <a href="gallery.html" data-link>Gallery</a>
+        <a href="valentine.html" data-link>Valentine</a>
+      </nav>
+    </div>
     </header>
 
-    <main class="container main hero" style="display:flex;flex-direction:column;align-items:center;justify-content:center;min-height:80vh;">
-      <div class="hero-card reveal" style="background:rgba(255,255,255,0.72);backdrop-filter:blur(10px) saturate(120%);border-radius:24px;box-shadow:0 10px 30px rgba(8,23,48,0.10);padding:48px 36px;text-align:center;max-width:520px;">
-        <h1 style="font-family:'Playfair Display',serif;font-size:2.6rem;color:#2d5a27;margin-bottom:18px;">It all started with a mistake.</h1>
-        <p class="lead" style="font-family:'Lora',serif;color:#4b5e3c;font-size:1.2rem;margin-bottom:28px;">Scroll less. Feel more.</p>
+    <main class="container main hero">
+      <div class="hero-card reveal">
+        <h1>It all started with a mistake.</h1>
+        <p class="lead">Scroll less. Feel more.</p>
         <div class="hero-actions">
-          <a class="btn ghibli-btn" href="story.html" data-link style="font-size:1.2rem;padding:14px 38px;font-family:'Pacifico',cursive;">Start the Story</a>
+          <a class="btn primary" href="story.html" data-link>Start the story</a>
         </div>
       </div>
-      <div class="scroll-cue" aria-hidden="true" style="margin-top:32px;">
+
+      <div class="scroll-cue" aria-hidden="true">
         <span class="arrow"></span>
-        <span class="label" style="color:#2d5a27;font-family:'Lora',serif;">Scroll</span>
+        <span class="label">Scroll</span>
       </div>
     </main>
+
     <div class="bg-anim" aria-hidden="true"></div>
+
     <script src="script.js" defer></script>
   </body>
   </html>
