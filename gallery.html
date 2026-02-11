@@ -22,24 +22,24 @@
   </header>
 
   <main class="container">
-    <h2 class="page-title ghibli-title" style="text-align:center;">Our Memories</h2>
-    
-    <div class="filmstrip" id="filmstrip" aria-live="polite">
-        </div>
-
-    <div class="gallery-actions" style="text-align:center; margin-top: 40px;">
-      <a class="btn ghibli-btn" href="valentine.html" style="padding: 15px 40px; text-decoration: none;">Next Chapter →</a>
+  <h2 class="ghibli-title">Our Memories</h2>
+  
+  <div class="slideshow-container">
+    <div class="photo-card polaroid" id="current-slide">
+      <img id="gallery-img" src="assets/photos/IMG_7560.JPG" alt="Memory">
+      <div class="polaroid-caption" id="gallery-caption">I did not know this moment would stay with me, but it did.</div>
     </div>
 
-    <div class="modal" aria-hidden="true">
-      <div class="modal-inner" role="dialog" aria-modal="true">
-        <button class="modal-close" aria-label="Close">✕</button>
-        <img class="modal-img" src="" alt="">
-        <p class="modal-caption" style="font-family: 'Pacifico', cursive; font-size: 1.5rem; color: #2d5a27;"></p>
-      </div>
+    <div class="slide-nav">
+      <button class="ghibli-btn" id="prevBtn">← Previous</button>
+      <button class="ghibli-btn" id="nextBtn">Next →</button>
     </div>
-  </main>
+  </div>
 
+  <div style="text-align:center; margin-top: 40px;">
+    <a class="ghibli-btn" href="valentine.html">Next Chapter →</a>
+  </div>
+</main>
   <script src="script.js" defer></script>
 </body>
 </html>
