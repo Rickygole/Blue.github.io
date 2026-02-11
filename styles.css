@@ -117,3 +117,20 @@ a:focus,button:focus{outline:3px solid rgba(91,159,255,0.18);outline-offset:4px}
   .timeline-progress{display:none}
 }
 
+/* Improved legibility over animated background */
+/* Stronger headings and slightly heavier body text for clarity */
+h1,h2,h3,.page-title,.brand,.hero-card h1,.final-ask h1{font-weight:800;color:var(--text)}
+.lead,.card-text,.nav a{font-weight:600;color:var(--text)}
+
+/* Ensure translucent surfaces keep readable text */
+.hero-card,.card,.photo-card,.modal-inner{color:var(--text)}
+
+/* Subtle text halo to lift text from very busy GIF areas */
+.hero-card h1,.page-title,.card-text{text-shadow:0 1px 0 rgba(255,255,255,0.55)}
+
+/* Slightly increase card contrast while keeping GIF visible */
+.hero-card{background:rgba(255,255,255,0.72)}
+.card{background:rgba(255,255,255,0.68)}
+.photo-card{background:rgba(255,255,255,0.62)}
+
+
