@@ -23,14 +23,16 @@
 
   <main class="container valentine">
     <section class="polaroid-frame reveal">
-      <div class="polaroid empty"></div>
+      <div class="polaroid">
+        <img src="assets/photos/last-page.png" alt="Last Page" style="width:100%;height:100%;object-fit:cover;border-radius:12px;box-shadow:0 4px 16px rgba(8,23,48,0.10);" />
+      </div>
       <p class="lead">The next one is Valentine’s Day. With you?</p>
     </section>
 
     <section class="final-ask reveal">
       <h1>Will you be my Valentine?</h1>
       <div class="choices">
-        <button id="yesBtn" class="btn">Yes</button>
+        <button id="yesBtn" class="btn btn-yes">Yes</button>
         <button id="obviousBtn" class="btn primary">Obviously Yes</button>
       </div>
       <p id="result" class="result" aria-live="polite"></p>

@@ -1,3 +1,13 @@
+/* Extra dreamy glassmorphism for story cards */
+.story-card {
+  background: rgba(255, 255, 255, 0.65) !important;
+  backdrop-filter: blur(12px) !important;
+  -webkit-backdrop-filter: blur(12px) !important;
+  border-radius: 25px !important;
+  border: 1px solid rgba(255, 255, 255, 0.4) !important;
+  color: #1a3c15 !important;
+  box-shadow: 0 8px 32px 0 rgba(31,38,135,0.10);
+}
 :root{
   --bg: #f5f9ff;
   --surface: #ffffff;
@@ -40,8 +50,25 @@ body.page.visible{opacity:1;transition:opacity 420ms ease}
 .hero-card h1{margin:0;font-size:2.2rem;font-weight:700;letter-spacing:-0.02em}
 .lead{color:var(--muted);margin-top:10px}
 .hero-actions{margin-top:18px}
-.btn{display:inline-block;padding:10px 16px;border-radius:10px;border:1px solid rgba(3,32,60,0.06);background:transparent;color:var(--primary);cursor:pointer;text-decoration:none}
+.btn{display:inline-block;padding:10px 16px;border-radius:10px;border:1px solid rgba(3,32,60,0.06);background:transparent;color:var(--primary);cursor:pointer;text-decoration:none;transition:background 0.2s, color 0.2s, box-shadow 0.2s;box-shadow:0 2px 8px rgba(30,58,138,0.08)}
 .btn.primary{background:linear-gradient(90deg,var(--primary),#244fb3);color:#fff;border:0}
+
+/* Enhanced Yes button style */
+.btn-yes {
+  background: linear-gradient(90deg, #ffb6c1 0%, #ffe4e1 100%);
+  color: #1e3a8a;
+  font-weight: 700;
+  border: none;
+  box-shadow: 0 4px 16px rgba(255,182,193,0.18);
+  padding: 12px 22px;
+  font-size: 1.08rem;
+  letter-spacing: 0.02em;
+}
+.btn-yes:hover, .btn-yes:focus {
+  background: linear-gradient(90deg, #ffe4e1 0%, #ffb6c1 100%);
+  color: #c2185b;
+  box-shadow: 0 6px 24px rgba(255,182,193,0.28);
+}
 
 /* Scroll cue */
 .scroll-cue{display:flex;flex-direction:column;align-items:center;margin-top:22px;color:var(--muted)}
@@ -61,17 +88,54 @@ body.page.visible{opacity:1;transition:opacity 420ms ease}
 .reveal{opacity:0;transform:translateY(8px);transition:opacity 480ms ease,transform 480ms ease}
 .reveal.visible{opacity:1;transform:none}
 
+
 /* Timeline */
 .timeline{display:flex;gap:20px;padding:40px 0;align-items:flex-start}
 .timeline-progress{width:48px;position:relative}
 .timeline-progress .fill{position:absolute;left:50%;transform:translateX(-50%);width:4px;background:linear-gradient(180deg,var(--accent),var(--primary));border-radius:4px;top:20px;bottom:20px;transform-origin:top;height:0}
-.page-title{margin:0 0 18px;font-size:1.2rem}
-.cards{flex:1;display:flex;flex-direction:column;gap:16px}
+.page-title{margin:0 0 18px;font-size:1.2rem;font-family:'Playfair Display', Lora, serif;}
+.cards{flex:1;display:flex;flex-direction:column;gap:24px}
 .card{background:rgba(255,255,255,0.62);padding:18px;border-radius:12px;box-shadow:var(--shadow);border-left:4px solid rgba(91,159,255,0.18);backdrop-filter:blur(6px)}
-.card-text{margin:0 0 10px}
+.card-text{margin:0 0 10px;font-family:'Lora', 'Playfair Display', serif;font-size:1.18rem;line-height:1.7;}
+.story-heading{font-family:'Playfair Display', Lora, serif;font-size:1.1rem;font-weight:700;margin:0 0 8px 0;color:var(--primary);letter-spacing:0.01em;}
 .toggle{background:transparent;border:0;color:var(--primary);cursor:pointer}
 .extra{max-height:0;overflow:hidden;transition:max-height 320ms ease;color:var(--muted);}
 .card.expanded .extra{max-height:80px}
+
+/* Glassmorphism for story cards */
+.glass-card {
+  background: rgba(255,255,255,0.60) !important;
+  box-shadow: 0 8px 32px 0 rgba(31,38,135,0.18);
+  backdrop-filter: blur(18px) saturate(120%);
+  -webkit-backdrop-filter: blur(18px) saturate(120%);
+  border-radius: 18px;
+  border: 1.5px solid rgba(255,255,255,0.22);
+  margin-bottom: 8px;
+}
+
+/* Love note at the bottom */
+.love-note {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin: 60px 0 24px 0;
+}
+.love-note span {
+  font-family: 'Pacifico', cursive;
+  font-size: 2.1rem;
+  color: #c2185b;
+  background: rgba(255,255,255,0.68);
+  padding: 16px 32px;
+  border-radius: 18px;
+  box-shadow: 0 4px 24px rgba(200,24,91,0.10);
+  letter-spacing: 0.03em;
+  text-align: center;
+}
+
+/* Override body font for story page */
+body.page {
+  font-family: 'Lora', 'Playfair Display', serif;
+}
 
 /* Gallery */
 .filmstrip{display:flex;gap:18px;flex-wrap:wrap;margin-top:18px}
