@@ -80,11 +80,20 @@
         const name = src.split('/').pop();
         const caption = CAPTIONS[name] || '';
         const btn = document.createElement('button');
-        btn.className = 'photo-card reveal';
+        btn.className = 'photo-card reveal polaroid';
         btn.setAttribute('data-src', src);
         btn.setAttribute('data-caption', caption);
+
+        // random slight rotation for scattered polaroid look
+        const rot = (Math.random()-0.5) * 6; // -3deg .. +3deg
+        btn.style.transform = `rotate(${rot}deg)`;
+
         const img = document.createElement('img'); img.src = src; img.alt = caption || name;
         btn.appendChild(img);
+
+        const cap = document.createElement('div'); cap.className = 'polaroid-caption'; cap.textContent = caption;
+        btn.appendChild(cap);
+
         film.appendChild(btn);
       });
     }
