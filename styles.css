@@ -45,13 +45,23 @@ body {
 /* --- CONTAINERS & CARDS --- */
 .container { max-width: 850px; margin: 0 auto; padding: 40px 20px; text-align: center; }
 .hero-card, .story-card {
-  background: var(--ghibli-cream);
-  backdrop-filter: blur(15px);
+  /* Lowering the last number (0.8) makes it more transparent */
+  background: rgba(255, 255, 255, 0.8) !important; 
+  backdrop-filter: blur(15px); /* This keeps the 'frosted glass' look */
   border-radius: 30px;
   padding: 40px;
-  color: var(--ghibli-green); /* Dark green text on cream background for readability */
+  
+  /* This makes all text inside the cards bold and prominent */
+  color: var(--ghibli-green);
+  font-weight: 700; 
   box-shadow: 0 15px 40px rgba(0,0,0,0.5);
   margin-top: 30px;
+}
+
+/* Also making the headers inside the cards extra bold */
+.hero-card h1, .story-card h3 {
+  font-weight: 900 !important;
+  color: var(--ghibli-green);
 }
 
 /* --- PROMINENT TITLES --- */
