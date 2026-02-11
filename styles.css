@@ -27,11 +27,12 @@ body {
   z-index: -1000;
 }
 
-#gif-bg::after {
+##gif-bg::after {
   content: "";
   position: absolute;
   inset: 0;
-  background: rgba(0, 0, 0, 0.45); /* Darker tint makes white text stand out */
+  /* Change 0.45 to a lower number like 0.15 or 0.2 to make it brighter */
+  background: rgba(0, 0, 0, 0.20); 
   pointer-events: none;
 }
 
