@@ -1,3 +1,25 @@
+/* DEBUG: Force gallery visibility */
+.filmstrip {
+  background: #fffbe6 !important;
+  min-height: 300px !important;
+  z-index: 1000 !important;
+  opacity: 1 !important;
+}
+.photo-card, .photo-card.polaroid {
+  background: #ffe4e1 !important;
+  border: 2px solid #c2185b !important;
+  opacity: 1 !important;
+  z-index: 1001 !important;
+}
+.photo-card img, .photo-card.polaroid img {
+  display: block !important;
+  opacity: 1 !important;
+  width: 100% !important;
+  max-width: 236px !important;
+  max-height: 160px !important;
+  background: #fff !important;
+  border: 2px solid #1e3a8a !important;
+}
 /* Ghibli-Specific Global Styles */
 .ghibli-theme {
   /* Set your Totoro GIF here if not already in your bg div */
