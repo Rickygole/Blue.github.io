@@ -1,3 +1,91 @@
+/* Ghibli-Specific Global Styles */
+.ghibli-theme {
+  /* Set your Totoro GIF here if not already in your bg div */
+  background: url('https://media1.giphy.com/media/v1.Y2lkPTc5MGI3NjExOW5lbzQ3MWhjZTYxbTk0ZHE2NTJlbmwwdjNhNWNuMTFvOWd0NW41ZCZlcD12MV9pbnRlcm5hbF9naWZfYnlfaWQmY3Q9Zw/x5HlLDaLMZNVS/giphy.gif') no-repeat center center fixed;
+  background-size: cover;
+}
+
+.ghibli-title {
+  font-family: 'Playfair Display', serif;
+  color: #fff;
+  text-shadow: 2px 2px 10px rgba(0,0,0,0.5);
+  font-size: 3rem;
+  margin-bottom: 2rem;
+}
+
+/* Glassmorphism Story Cards */
+.story-card {
+  background: rgba(255, 255, 255, 0.7); /* Soft cream/white */
+  backdrop-filter: blur(12px); /* Ethereal blur */
+  border-radius: 30px;
+  padding: 30px;
+  margin-bottom: 30px;
+  border: 1px solid rgba(255, 255, 255, 0.4);
+  box-shadow: 0 8px 32px rgba(0, 0, 0, 0.1);
+  position: relative;
+  max-width: 600px;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.card-leaf {
+  position: absolute;
+  top: -15px;
+  left: 20px;
+  font-size: 1.5rem;
+}
+
+.story-heading {
+  font-family: 'Playfair Display', serif;
+  color: #2d5a27; /* Forest Green */
+  font-size: 1.6rem;
+  margin-bottom: 10px;
+}
+
+.card-text {
+  font-family: 'Lora', serif;
+  color: #444;
+  line-height: 1.6;
+  font-size: 1.1rem;
+}
+
+/* Poetic Promise Styling */
+.poetic-promise {
+  text-align: center;
+  margin-top: 60px;
+  padding: 40px;
+  color: white;
+}
+
+.promise-main {
+  font-family: 'Lora', serif;
+  font-style: italic;
+  font-size: 1.3rem;
+}
+
+.final-vow {
+  font-family: 'Pacifico', cursive;
+  font-size: 2.5rem;
+  color: #ffeb3b; /* Soft glow yellow */
+  text-shadow: 0 0 15px rgba(255, 235, 59, 0.6);
+  margin-top: 20px;
+}
+
+.ghibli-btn {
+  background: #2d5a27;
+  color: white;
+  padding: 15px 30px;
+  border-radius: 50px;
+  text-decoration: none;
+  font-family: 'Lora', serif;
+  transition: 0.3s;
+  box-shadow: 0 4px 15px rgba(0,0,0,0.2);
+}
+
+.ghibli-btn:hover {
+  transform: scale(1.05);
+  background: #3d7a35;
+}
 /* Extra dreamy glassmorphism for story cards */
 .story-card {
   background: rgba(255, 255, 255, 0.65) !important;
