@@ -1,0 +1,71 @@
+:root{
+  --bg: #ffffff;
+  --text: #0b0b0b;
+  --muted: #666;
+  --accent: #f6f3ff;
+  --max-width: 720px;
+}
+*{box-sizing:border-box}
+html,body{height:100%}
+body{
+  margin:0;
+  background:var(--bg);
+  color:var(--text);
+  font-family: "Helvetica Neue", Arial, sans-serif;
+  -webkit-font-smoothing:antialiased;
+  -moz-osx-font-smoothing:grayscale;
+  line-height:1.4;
+}
+.site{scroll-behavior:smooth}
+.panel{
+  min-height:100vh;
+  display:flex;
+  align-items:center;
+  justify-content:center;
+  padding:6vh 5vw;
+}
+.landing h1{
+  font-size:2.4rem;
+  font-weight:600;
+  margin:0;
+  text-align:center;
+}
+.content{max-width:var(--max-width);width:100%;margin:0 auto;text-align:center}
+.content p{font-size:1.15rem;margin:0 auto;line-height:1.6}
+.lead{font-size:1.2rem;margin-top:1.2rem}
+
+/* Year background, quiet and very faint */
+.year{position:relative}
+.year::before{
+  content:"2020";
+  position:absolute;left:50%;top:40%;transform:translate(-50%,-50%);
+  font-size:6rem;opacity:0.03;pointer-events:none;user-select:none
+}
+
+/* Polaroid / gallery */
+.polaroids{display:flex;gap:1rem;align-items:flex-end;justify-content:center;margin-top:1rem}
+.photo{background:#fff;padding:0.6rem;border-radius:6px;box-shadow:0 6px 18px rgba(10,10,10,0.06);width:180px}
+.photo img{display:block;width:100%;height:auto;border-radius:4px}
+.photo figcaption{font-size:0.85rem;color:var(--muted);margin-top:0.5rem}
+.polaroid.empty{width:200px;height:200px;border-radius:6px;border:1px dashed rgba(0,0,0,0.06);background:linear-gradient(180deg,var(--accent),#fff)}
+
+/* Final ask */
+.final h2{font-size:1.6rem;margin:0 0 1rem}
+.choices{display:flex;gap:0.8rem;justify-content:center}
+.btn{background:transparent;border:1px solid rgba(0,0,0,0.08);padding:0.6rem 1rem;border-radius:8px;font-size:1rem;cursor:pointer}
+.btn.primary{background:#111;color:#fff;border:0}
+
+/* Fade in only */
+.fade{opacity:0;transform:translateY(10px);transition:opacity 520ms ease,transform 520ms ease}
+.fade.visible{opacity:1;transform:none}
+
+/* Reduce motion + accessibility */
+@media (prefers-reduced-motion:reduce){
+  .fade{transition:none}
+}
+
+/* Small screens */
+@media (max-width:420px){
+  .landing h1{font-size:1.6rem}
+  .photo{width:140px}
+}
