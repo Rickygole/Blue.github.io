@@ -232,7 +232,16 @@ body.page {
 .photo-card:hover{transform:translateY(-10px) rotate(-1.6deg);box-shadow:0 30px 60px rgba(8,23,48,0.14)}
 .photo-card:hover img{transform:scale(1.03)}
 .photo-card.polaroid{background:linear-gradient(180deg,#fff,#fafafa);border-radius:8px;padding:12px;border:1px solid rgba(8,23,48,0.06);width:260px}
-.photo-card.polaroid img{width:236px;height:160px;border-radius:4px;display:block;margin:0 auto;box-shadow:0 6px 18px rgba(8,23,48,0.12)}
+.photo-card.polaroid img{
+  width:100%;
+  height:auto;
+  max-width:236px;
+  max-height:160px;
+  border-radius:4px;
+  display:block;
+  margin:0 auto;
+  box-shadow:0 6px 18px rgba(8,23,48,0.12);
+}
 .polaroid-caption{font-size:0.85rem;color:var(--muted);text-align:center;margin-top:10px;padding:0 6px;min-height:1.2em}
 .photo-card.polaroid{display:flex;flex-direction:column;align-items:center;justify-content:flex-start}
 .photo-card.polaroid::after{content:"";display:block;height:8px;width:100%}
