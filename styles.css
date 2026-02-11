@@ -56,9 +56,9 @@ body {
 /* --- PROMINENT TITLES --- */
 .ghibli-title {
   font-family: 'Pacifico', cursive;
-  font-size: 3.8rem !important; /* Huge prominent text */
-  color: #fff !important;
-  text-shadow: 2px 2px 20px rgba(0,0,0,0.9);
+  font-size: 3.8rem !important;
+  color: #ffffff !important; /* This makes it white */
+  text-shadow: 2px 2px 20px rgba(0,0,0,0.9); /* High contrast shadow */
   margin-bottom: 40px;
 }
 
