@@ -1,0 +1,45 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>Valentine — The Ask</title>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="style.css">
+</head>
+<body class="page">
+  <header class="nav">
+    <div class="container nav-inner">
+      <a class="brand" href="/">Blue</a>
+      <nav>
+        <a href="/" data-link>Home</a>
+        <a href="story.html" data-link>Story</a>
+        <a href="gallery.html" data-link>Gallery</a>
+        <a href="valentine.html" data-link>Valentine</a>
+      </nav>
+    </div>
+  </header>
+
+  <main class="container valentine">
+    <section class="polaroid-frame reveal">
+      <div class="polaroid empty"></div>
+      <p class="lead">The next one is Valentine’s Day. With you?</p>
+    </section>
+
+    <section class="final-ask reveal">
+      <h1>Will you be my Valentine?</h1>
+      <div class="choices">
+        <button id="yesBtn" class="btn">Yes</button>
+        <button id="obviousBtn" class="btn primary">Obviously Yes</button>
+      </div>
+      <p id="result" class="result" aria-live="polite"></p>
+    </section>
+
+    <canvas id="confettiCanvas" class="confetti-canvas" aria-hidden="true"></canvas>
+    <!-- User-provided audio file (not included). Place a copy at assets/audio/anyone.mp3 -->
+    <audio id="song" src="assets/audio/anyone.mp3" preload="none"></audio>
+  </main>
+
+  <script src="script.js" defer></script>
+</body>
+</html>
