@@ -13,7 +13,8 @@
 html,body{height:100%}
 body{
   margin:0;
-  background: linear-gradient(180deg,var(--bg),#eef6ff 60%);
+  /* keep a subtle translucent overlay so the GIF shows through */
+  background: linear-gradient(180deg, rgba(245,249,255,0.48), rgba(238,246,255,0.5));
   color:var(--text);
   font-family: Inter, system-ui, -apple-system, "Segoe UI", Roboto, "Helvetica Neue", Arial;
   -webkit-font-smoothing:antialiased;
@@ -52,6 +53,9 @@ body.page.visible{opacity:1;transition:opacity 420ms ease}
 /* Use a dedicated DOM layer for the animated GIF so it doesn't flicker behind pseudo-elements */
 .bg-anim::before{
   content:"";position:fixed;inset:0;pointer-events:none;background-image:url('https://media1.giphy.com/media/v1.Y2lkPTc5MGI3NjExOW5lbzQ3MWhjZTYxbTk0ZHE2NTJlbmwwdjNhNWNuMTFvOWd0NW41ZCZlcD12MV9pbnRlcm5hbF9naWZfYnlfaWQmY3Q9Zw/x5HlLDaLMZNVS/giphy.gif');background-size:cover;background-position:center;opacity:0.18;filter:saturate(92%) blur(0.6px);mix-blend-mode:overlay;z-index:-1}
+
+/* Dedicated full-screen GIF element (inserted in DOM as #gif-bg) */
+#gif-bg{position:fixed;inset:0;pointer-events:none;background-image:url('https://media1.giphy.com/media/v1.Y2lkPTc5MGI3NjExOW5lbzQ3MWhjZTYxbTk0ZHE2NTJlbmwwdjNhNWNuMTFvOWd0NW41ZCZlcD12MV9pbnRlcm5hbF9naWZfYnlfaWQmY3Q9Zw/x5HlLDaLMZNVS/giphy.gif');background-size:cover;background-position:center;opacity:0.95;filter:saturate(110%);z-index:-999;}
 
 /* Reveal utility */
 .reveal{opacity:0;transform:translateY(8px);transition:opacity 480ms ease,transform 480ms ease}
