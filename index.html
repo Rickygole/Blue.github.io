@@ -3,97 +3,46 @@
 <head>
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width,initial-scale=1" />
-  <title>Will you be my Valentine?</title>
-  <link rel="stylesheet" href="styles.css">
-</head>
-<body>
-  <main class="site">
+  <!doctype html>
+  <html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width,initial-scale=1" />
+    <title>Home — Valentine</title>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="style.css">
+  </head>
+  <body class="page">
+    <header class="nav">
+      <div class="container nav-inner">
+        <a class="brand" href="/">Blue</a>
+        <nav>
+          <a href="/" data-link>Home</a>
+          <a href="story.html" data-link>Story</a>
+          <a href="gallery.html" data-link>Gallery</a>
+          <a href="valentine.html" data-link>Valentine</a>
+        </nav>
+      </div>
+    </header>
 
-    <section class="panel landing">
-      <div class="content fade">
+    <main class="container main hero">
+      <div class="hero-card reveal">
         <h1>It all started with a mistake.</h1>
+        <p class="lead">Scroll less. Feel more.</p>
+        <div class="hero-actions">
+          <a class="btn primary" href="story.html" data-link>Start the story</a>
+        </div>
       </div>
-    </section>
 
-    <section class="panel">
-      <div class="content fade">
-        <p>You added me by accident, and somehow that accident kept showing up every day.</p>
+      <div class="scroll-cue" aria-hidden="true">
+        <span class="arrow"></span>
+        <span class="label">Scroll</span>
       </div>
-    </section>
+    </main>
 
-    <section class="panel year">
-      <div class="content fade">
-        <p>One day I opened all your snaps, and after that nothing felt casual anymore.</p>
-      </div>
-    </section>
+    <div class="bg-anim" aria-hidden="true"></div>
 
-    <section class="panel">
-      <div class="content fade">
-        <p>We laughed at something stupid that only made sense to us, and somehow that was enough.</p>
-      </div>
-    </section>
-
-    <section class="panel">
-      <div class="content fade">
-        <p>This was when I learned you could be soft and still dangerous, and I could care enough to stay.</p>
-      </div>
-    </section>
-
-    <section class="panel">
-      <div class="content fade">
-        <p>Somewhere between normal days and random conversations, I realized I cared whether you were okay.</p>
-      </div>
-    </section>
-
+    <script src="script.js" defer></script>
+  </body>
+  </html>
     <section class="panel gallery">
-      <div class="content fade">
-        <!-- Gallery uses uploaded images in repository root. Replace or remove if desired. -->
-        <div class="polaroids">
-          <figure class="photo">
-            <img src="IMG_7560.JPG" alt="" loading="lazy">
-            <figcaption>I did not know this moment would stay with me, but it did.</figcaption>
-          </figure>
-          <figure class="photo">
-            <img src="IMG_7561.JPG" alt="" loading="lazy">
-            <figcaption>This looked ordinary and somehow became important.</figcaption>
-          </figure>
-          <figure class="photo">
-            <img src="IMG_7562.JPG" alt="" loading="lazy">
-            <figcaption>I caught myself smiling later and knew why.</figcaption>
-          </figure>
-        </div>
-      </div>
-    </section>
-
-    <section class="panel blank">
-      <div class="content fade">
-        <div class="polaroid empty" aria-hidden="true"></div>
-        <p class="lead">The next one is Valentine’s Day. With you?</p>
-      </div>
-    </section>
-
-    <section class="panel final">
-      <div class="content fade">
-        <h2>Will you be my Valentine?</h2>
-        <div class="choices">
-          <button class="btn">Yes</button>
-          <button class="btn primary">Obviously Yes</button>
-        </div>
-      </div>
-    </section>
-
-  </main>
-
-  <script>
-    // Fade-in on scroll with IntersectionObserver
-    (function(){
-      const io = new IntersectionObserver((entries)=>{
-        entries.forEach(e=>{
-          if(e.isIntersecting) e.target.classList.add('visible');
-        });
-      }, {threshold: 0.12});
-      document.querySelectorAll('.fade').forEach(el=>io.observe(el));
-    })();
-  </script>
-</body>
-</html>

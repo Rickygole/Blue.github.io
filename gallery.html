@@ -1,0 +1,45 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>Gallery — Valentine</title>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="style.css">
+</head>
+<body class="page">
+  <header class="nav">
+    <div class="container nav-inner">
+      <a class="brand" href="/">Blue</a>
+      <nav>
+        <a href="/" data-link>Home</a>
+        <a href="story.html" data-link>Story</a>
+        <a href="gallery.html" data-link>Gallery</a>
+        <a href="valentine.html" data-link>Valentine</a>
+      </nav>
+    </div>
+  </header>
+
+  <main class="container">
+    <h2 class="page-title reveal">Gallery</h2>
+    <div class="filmstrip" id="filmstrip" aria-live="polite">
+      <!-- Photos populated by script.js from assets/photos/ -->
+    </div>
+
+    <div class="gallery-actions">
+      <a class="btn" href="valentine.html" data-link>Next</a>
+    </div>
+
+    <!-- Modal -->
+    <div class="modal" aria-hidden="true">
+      <div class="modal-inner" role="dialog" aria-modal="true">
+        <button class="modal-close" aria-label="Close">✕</button>
+        <img class="modal-img" src="" alt="">
+        <p class="modal-caption"></p>
+      </div>
+    </div>
+  </main>
+
+  <script src="script.js" defer></script>
+</body>
+</html>
