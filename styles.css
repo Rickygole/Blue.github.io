@@ -48,7 +48,10 @@ body.page.visible{opacity:1;transition:opacity 420ms ease}
 @keyframes bounce{0%,100%{transform:translateY(0) rotate(45deg)}50%{transform:translateY(8px) rotate(45deg)}}
 
 /* Background animation subtle */
-.bg-anim{position:fixed;inset:0;pointer-events:none;z-index:-1;background:radial-gradient(800px 400px at 10% 10%, rgba(91,159,255,0.08), transparent), radial-gradient(600px 300px at 90% 80%, rgba(30,58,138,0.04), transparent)}
+.bg-anim{position:fixed;inset:0;pointer-events:none;z-index:-2;background:radial-gradient(800px 400px at 10% 10%, rgba(91,159,255,0.08), transparent), radial-gradient(600px 300px at 90% 80%, rgba(30,58,138,0.04), transparent)}
+/* Use a dedicated DOM layer for the animated GIF so it doesn't flicker behind pseudo-elements */
+.bg-anim::before{
+  content:"";position:fixed;inset:0;pointer-events:none;background-image:url('https://media1.giphy.com/media/v1.Y2lkPTc5MGI3NjExOW5lbzQ3MWhjZTYxbTk0ZHE2NTJlbmwwdjNhNWNuMTFvOWd0NW41ZCZlcD12MV9pbnRlcm5hbF9naWZfYnlfaWQmY3Q9Zw/x5HlLDaLMZNVS/giphy.gif');background-size:cover;background-position:center;opacity:0.18;filter:saturate(92%) blur(0.6px);mix-blend-mode:overlay;z-index:-1}
 
 /* Reveal utility */
 .reveal{opacity:0;transform:translateY(8px);transition:opacity 480ms ease,transform 480ms ease}
@@ -98,22 +101,7 @@ body.page.visible{opacity:1;transition:opacity 420ms ease}
 .card:hover{transform:translateY(-6px);box-shadow:0 24px 48px rgba(8,23,48,0.12)}
 
 /* subtle film effect for background */
-body::after{content:"";position:fixed;inset:0;pointer-events:none;background:radial-gradient(800px 300px at 10% 12%, rgba(91,159,255,0.03), transparent), radial-gradient(600px 200px at 85% 78%, rgba(30,58,138,0.02), transparent);mix-blend-mode:overlay;z-index:-2}
-
-/* Animated GIF background (subtle, slightly more visible) */
-body::before{
-  content:"";
-  position:fixed;
-  inset:0;
-  pointer-events:none;
-  background-image: url('https://media1.giphy.com/media/v1.Y2lkPTc5MGI3NjExOW5lbzQ3MWhjZTYxbTk0ZHE2NTJlbmwwdjNhNWNuMTFvOWd0NW41ZCZlcD12MV9pbnRlcm5hbF9naWZfYnlfaWQmY3Q9Zw/x5HlLDaLMZNVS/giphy.gif');
-  background-size:cover;
-  background-position:center;
-  opacity:0.12;
-  filter:saturate(85%);
-  mix-blend-mode:overlay;
-  z-index:-1;
-}
+body::after{content:"";position:fixed;inset:0;pointer-events:none;background:radial-gradient(800px 300px at 10% 12%, rgba(91,159,255,0.03), transparent), radial-gradient(600px 200px at 85% 78%, rgba(30,58,138,0.02), transparent);mix-blend-mode:overlay;z-index:-3}
 
 /* Accessibility focus */
 a:focus,button:focus{outline:3px solid rgba(91,159,255,0.18);outline-offset:4px}
