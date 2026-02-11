@@ -37,7 +37,6 @@ body {
 
 /* --- NAVIGATION (MERGED GHOST NAV) --- */
 .nav { 
-  /* Removing the white line/background completely */
   background: transparent !important; 
   box-shadow: none !important;
   border: none !important;
@@ -45,7 +44,7 @@ body {
   position: sticky; 
   top: 0; 
   z-index: 100; 
-  backdrop-filter: none; /* Removing blur helps it merge with background */
+  backdrop-filter: none; 
 }
 
 .nav-inner { 
@@ -70,7 +69,6 @@ body {
   text-decoration: none; 
   margin-left: 25px; 
   font-weight: 800; 
-  /* Subtle glass buttons that don't create a 'line' effect */
   background: rgba(255, 255, 255, 0.15); 
   padding: 10px 22px; 
   border-radius: 50px; 
@@ -95,12 +93,36 @@ body {
   border: 1px solid rgba(255, 255, 255, 0.3);
 }
 
-/* Bold headers */
-.hero-card h1, .story-card h3 {
-  font-weight: 900 !important;
+/* --- SLIDESHOW POLAROID FIX --- */
+.photo-card.polaroid {
+  background: #fff;
+  padding: 15px 15px 60px 15px; /* Extra bottom padding for the caption space */
+  box-shadow: 0 10px 30px rgba(0,0,0,0.3);
+  width: 400px; /* Constrains the width */
+  margin: 0 auto;
+  transition: opacity 0.3s ease, transform 0.3s ease;
+  border-radius: 0; /* Classic Polaroid look */
+}
+
+.photo-card img {
+  width: 100% !important; /* Forces image to fit the 400px frame */
+  height: 400px !important; /* Keeps it a perfect square */
+  object-fit: cover; /* Prevents stretching */
+}
+
+.polaroid-caption {
+  font-family: 'Pacifico', cursive;
+  text-align: center;
+  margin-top: 15px;
   color: var(--ghibli-green);
-  font-size: 2.5rem;
-  margin-top: 0;
+  font-size: 1.2rem;
+}
+
+.slide-nav {
+  display: flex;
+  justify-content: center;
+  gap: 20px;
+  margin-top: 30px;
 }
 
 /* --- PROMINENT TITLES --- */
@@ -122,6 +144,8 @@ body {
   text-decoration: none;
   display: inline-block;
   transition: 0.3s;
+  border: none;
+  cursor: pointer;
 }
 
 .btn-yes { 
