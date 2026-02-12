@@ -34,7 +34,7 @@
       'IMG_8355.jpeg':'Just us, being exactly who we are.',
       'IMG_8360.jpeg':'I caught a glimpse of forever in this moment.',
       'IMG_8361.jpeg':'Proof that the best moments aren’t planned.',
-      'IMG_8362.jpeg':'Holding onto this feeling as long as I can.',
+      'IMG_8362.jpeg':'I added bhai as well cause I want to a part of your family and mamu is missing',
       'IMG_8363.jpeg':'You, me, and a thousand miles made small.'
     };
 
